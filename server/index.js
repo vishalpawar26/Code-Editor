@@ -6,14 +6,14 @@ const request = require("request");
 const app = express();
 app.use(express());
 app.use(express.json());
-app.use(cors(
-  {
-    origin: "*",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"],
-    credentials: true
-  }
-));
+// app.use(cors(
+//   {
+//     origin: "*",
+//     methods: ["GET", "POST"],
+//     allowedHeaders: ["Content-Type"],
+//     credentials: true
+//   }
+// ));
 
 dotenv.config();
 
@@ -43,6 +43,10 @@ app.post("/run", async (req, res) => {
     },
 
     function (error, response, body) {
+      res.setHeader("Access-Control-Allow-Origin", "https://code-editor-client.vercel.app");
+      res.setHeader("Access-Control-Allow-Methods", "GET, POST");
+      res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+      
       if (error) {
         return res.status(response.statusCode).send(error);
       } else {
