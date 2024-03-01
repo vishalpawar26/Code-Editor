@@ -23,7 +23,7 @@ app.use("/", (req, res) => {
   res.send("Server is running...");
 });
 
-app.post("/run", async (req, res) => {
+app.post("/", async (req, res) => {
   const { script, stdin, language, versionIndex } = req.body;
 
   var program = {
