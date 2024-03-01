@@ -45,7 +45,7 @@ function App() {
     };
 
     axios
-      .post("https://code-editor-server-one.vercel.app//run", formData)
+      .post("https://code-editor-server-one.vercel.app/run", formData)
       .then((res) => {
         console.log(res);
         setOutputData(res.data);
