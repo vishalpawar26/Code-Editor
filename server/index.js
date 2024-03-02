@@ -19,7 +19,7 @@ dotenv.config();
 
 const PORT = 8001;
 
-app.use("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Server is running...");
 });
 
