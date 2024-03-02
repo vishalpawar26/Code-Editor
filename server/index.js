@@ -8,9 +8,8 @@ app.use(express());
 app.use(express.json());
 app.use(cors(
   {
-    origin: "*",
+    origin: ["https://code-editor-client.vercel.app"],
     methods: ["GET", "POST"],
-    allowedHeaders: ["Content-Type"],
     credentials: true
   }
 ));
