@@ -44,6 +44,8 @@ function App() {
       versionIndex: language.versionIndex,
     };
 
+    axios.defaults.withCredentials = true;
+
     axios
       .post("https://code-editor-server-one.vercel.app/run", formData)
       .then((res) => {
